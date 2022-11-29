@@ -22,9 +22,7 @@ export default () => {
         </div>
       </div>
       <div className="main">
-        <div className="inner">
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </div>
   );

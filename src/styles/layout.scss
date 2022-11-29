@@ -95,7 +95,6 @@ $header-height: 6.5vh;
   .main {
     height: calc((100vh - #{$header-height}) * 0.8);
     display: flex;
-    align-items: center;
     justify-content: center;
   }
 }
