@@ -1,10 +1,10 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { configureStore } from "@reduxjs/toolkit";
+import todosReducer from "./todos/slice";
 
-import tableDataReducer from './reducers/tableDataReducer';
-import { updateAdditionalsMiddleware , updateSummaryDataMiddleware } from './middlewares';
-
-const reducer = combineReducers({ tableDataReducer });
-
-const store = createStore(reducer , applyMiddleware(updateAdditionalsMiddleware , updateSummaryDataMiddleware));
+const store = configureStore({
+  reducer: {
+    todosReducer,
+  },
+});
 window.store = store;
 export default store;

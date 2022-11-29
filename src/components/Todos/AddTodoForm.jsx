@@ -1,15 +1,18 @@
 import { Button, Input, makeStyles } from "@material-ui/core";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../redux/todos/slice";
 
 export default () => {
   const [task, setTask] = useState("");
   const [error, setError] = useState(false);
+  const dispatch = useDispatch();
   const classes = useStyle();
 
   const onAdd = () => {
     if (!task) return setError(true);
     setError(false);
-    alert(task);
+    dispatch(addTask(task));
     setTask("");
   };
 
