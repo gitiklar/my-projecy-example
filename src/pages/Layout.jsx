@@ -18,6 +18,7 @@ export default () => {
           <NavLink to="home"> Home</NavLink>
           <NavLink to="about">About</NavLink>
           <NavLink to="blogs">Blogs</NavLink>
+          <NavLink to="todos">Todos</NavLink>
         </div>
       </div>
       <div className="main">

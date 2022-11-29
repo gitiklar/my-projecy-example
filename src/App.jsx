@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import Blogs from "./components/Blogs";
 import Home from "./components/Home";
+import Todos from "./components/Todos/Todos";
 import Entry from "./pages/Entry";
 import Layout from "./pages/Layout";
 import store from "./redux/store";
@@ -19,6 +20,7 @@ export default () => {
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="blogs" element={<Blogs />} />
+            <Route path="todos" element={<Todos />} />
           </Route>
           <Route path="*" element={<Entry />} />
         </Routes>
