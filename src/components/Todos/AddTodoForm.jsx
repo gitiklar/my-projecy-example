@@ -1,7 +1,7 @@
 import { Button, Input, makeStyles } from "@material-ui/core";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTask } from "../../redux/todos/slice";
+import { addTask } from "../../redux/todos/actions";
 
 export default () => {
   const [task, setTask] = useState("");
@@ -25,6 +25,7 @@ export default () => {
           placeholder="Todo"
           value={task}
           onChange={(e) => setTask(e.target.value)}
+          onKeyDown={(e) => (e.key === "Enter" ? onAdd() : () => {})}
         />
         <Button variant="contained" color="primary" onClick={onAdd}>
           Add
