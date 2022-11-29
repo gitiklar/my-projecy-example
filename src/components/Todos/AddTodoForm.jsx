@@ -3,9 +3,12 @@ import { useState } from "react";
 
 export default () => {
   const [task, setTask] = useState("");
+  const [error, setError] = useState(false);
   const classes = useStyle();
 
   const onAdd = () => {
+    if (!task) return setError(true);
+    setError(false);
     alert(task);
     setTask("");
   };
@@ -23,7 +26,9 @@ export default () => {
         <Button variant="contained" color="primary" onClick={onAdd}>
           Add
         </Button>
-        <p className={classes.hide}> Error, must enter a value!</p>
+        <p className={error ? classes.show : classes.hide}>
+          Error, must enter a value!
+        </p>
       </div>
     </div>
   );
@@ -53,5 +58,6 @@ const useStyle = makeStyles(() => ({
   },
   show: {
     display: "block",
+    color: "red",
   },
 }));
