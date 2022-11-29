@@ -4,5 +4,8 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin: 0;
 }
+a.active {
+  font-weight: 700;
+}
 @import "./entry.scss";
 @import "./layout.scss";

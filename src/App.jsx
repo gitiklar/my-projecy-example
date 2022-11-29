@@ -15,6 +15,7 @@ export default () => {
       <BrowserRouter>
         <Routes>
           <Route path="/main" element={<Layout />}>
+            <Route index element={<div>Choose tab</div>} />
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="blogs" element={<Blogs />} />
