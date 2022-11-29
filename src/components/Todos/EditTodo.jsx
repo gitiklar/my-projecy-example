@@ -2,6 +2,7 @@ import { IconButton, Input, makeStyles, Paper } from "@material-ui/core";
 import { Save } from "@material-ui/icons";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { saveTask } from "../../redux/todos/actions";
 
 export default ({ elementKey, taskText }) => {
@@ -18,11 +19,13 @@ export default ({ elementKey, taskText }) => {
       <Input
         value={inpTaskText}
         onChange={(e) => setInpTaskText(e.target.value)}
+        onKeyDown={(e) => (e.key === "Enter" ? onSave() : () => {})}
+        className={classes.input}
       />
       <IconButton
-        type="submit"
         color="primary"
         aria-label="Add"
+        className={classes.icon}
         onClick={onSave}
       >
         <Save fontSize="small" />
@@ -32,8 +35,12 @@ export default ({ elementKey, taskText }) => {
 };
 
 const useStyle = makeStyles(() => ({
+  input: {
+    width: "90%",
+  },
   icon: {
     marginLeft: "auto",
+    width: "10%",
   },
   paper: {
     margin: "auto",
