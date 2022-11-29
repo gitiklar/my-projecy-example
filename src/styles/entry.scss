@@ -1,7 +1,7 @@
 $banner-color: gray;
 $header-height: 6.5vh;
 
-.entryContainer {
+.entry {
   &:before {
     content: " ";
     background-image: url(./images/bg.jpg);
@@ -18,44 +18,42 @@ $header-height: 6.5vh;
     opacity: 0.05;
   }
 
-  #header {
+  .header {
+    box-sizing: border-box;
     height: $header-height;
     width: 100%;
+    padding: 0 20px;
     background: #111111;
     color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
 
-    .ant-col-8 {
-      height: $header-height;
+    img {
+      display: block;
+      height: 100%;
+    }
 
-      img {
-        height: 100%;
-      }
+    h1 {
+      margin: 0;
+      height: 100%;
+      font-size: 2.5vh;
+      color: #ffffffb6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      .titleText {
-        height: 100%;
+    a {
+      color: #ffffffb6;
+      &.entry {
         display: flex;
         align-items: center;
-        justify-content: center;
-        font-size: 2.5vh;
-        color: #ffffffb6;
-      }
-
-      .linkToHome {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         justify-content: flex-end;
-        padding-right: 20px;
-        height: 100%;
-        font-size: 2.1vh;
-        a {
-          color: #ffffffb6;
-        }
       }
     }
   }
 
-  #heading {
+  .heading {
     background-color: #111111;
     color: rgba(255, 255, 255, 0.5);
     display: flex;
@@ -95,23 +93,6 @@ $header-height: 6.5vh;
       position: relative;
       z-index: 2;
     }
-
-    .lineMenu {
-      width: 100%;
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 3;
-      backdrop-filter: blur(100px);
-      padding: 20px 0;
-
-      button {
-        background-color: transparent;
-        color: white;
-        border: none;
-      }
-    }
   }
 
   .wrapper {
@@ -120,66 +101,55 @@ $header-height: 6.5vh;
     align-items: center;
     justify-content: center;
 
-    .inner {
-      .entryPage {
-        &,
-        .innerEntryPage {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+    .entryPage {
 
-          .bannerContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
 
-            h1 {
-              font-family: "Raleway";
-              font-size: 3.5vw;
-              font-weight: 100;
-              line-height: 1;
-            }
+        h1 {
+          font-family: "Raleway";
+          font-size: 3.5vw;
+          font-weight: 100;
+          line-height: 1;
+        }
 
-            h2 {
-              font-weight: 100;
-              line-height: 0.8;
-            }
+        h2 {
+          font-weight: 100;
+          line-height: 0.8;
+        }
 
-            h1,
-            h2 {
-              color: $banner-color;
-            }
+        h1,
+        h2 {
+          color: $banner-color;
+        }
 
-            h2 {
-              font-size: 2vw;
-            }
+        h2 {
+          font-size: 2vw;
+        }
 
-            @media only screen and (max-width: 550px) {
-              h1 {
-                font-size: 6vw;
-                font-weight: 100;
-              }
+        @media only screen and (max-width: 550px) {
+          h1 {
+            font-size: 6vw;
+            font-weight: 100;
+          }
 
-              h2 {
-                font-size: 4vw;
-              }
-            }
-
-            @media only screen and (max-height: 500px) {
-              h1 {
-                font-size: 4vh;
-              }
-
-              h2 {
-                font-size: 3vh;
-              }
-            }
+          h2 {
+            font-size: 4vw;
           }
         }
-      }
+
+        @media only screen and (max-height: 500px) {
+          h1 {
+            font-size: 4vh;
+          }
+
+          h2 {
+            font-size: 3vh;
+          }
+        }
     }
   }
 }

@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import logoImg from "../styles/images/logo.jpg";
 
-const HomeContainer = ({ children }) => {
+export default () => {
   return (
-    <div className="homeContainer">
-      <header id="header">
+    <div className="layout">
+      <header className="header">
         <Link to="/">
           <img src={logoImg} alt="logo" />
         </Link>
@@ -14,17 +14,17 @@ const HomeContainer = ({ children }) => {
           <span> &nbsp; &nbsp; Hello guest &nbsp;</span>
         </div>
       </header>
-      <div id="heading">
+      <div className="heading">
         <div className="menuLine">
           <Link to="/">Back to entry</Link>
-          <Link to="/table">Events table</Link>
+          <Link to="home">Home</Link>
         </div>
       </div>
-      <section id="main">
-        <div className="inner">{children}</div>
+      <section className="main">
+        <div className="inner">
+          <Outlet />
+        </div>
       </section>
     </div>
   );
 };
-
-export default HomeContainer;
