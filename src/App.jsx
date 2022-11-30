@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./components/About";
-import Blogs from "./components/Blogs";
+import Calculator from "./components/Calculator";
 import Home from "./components/Home";
 import Todos from "./components/Todos/TodosPage";
 import Entry from "./pages/Entry";
@@ -19,7 +19,7 @@ export default () => {
             <Route index element={<div>Choose tab</div>} />
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="blogs" element={<Blogs />} />
+            <Route path="calculator" element={<Calculator />} />
             <Route path="todos" element={<Todos />} />
           </Route>
           <Route path="*" element={<Entry />} />

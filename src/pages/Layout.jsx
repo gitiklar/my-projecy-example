@@ -17,7 +17,7 @@ export default () => {
           <NavLink to="/">Back to entry</NavLink>
           <NavLink to="home"> Home</NavLink>
           <NavLink to="about">About</NavLink>
-          <NavLink to="blogs">Blogs</NavLink>
+          <NavLink to="calculator">Calculator</NavLink>
           <NavLink to="todos">Todos</NavLink>
         </div>
       </div>
