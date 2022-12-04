@@ -1,3 +1,16 @@
+import { useRef } from "react";
+
 export default () => {
-  return <div>About</div>;
+  const inputRef = useRef();
+
+  const onClear = () => {
+    inputRef.current.value = "";
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} />
+      <button onClick={onClear}>Clear</button>
+    </div>
+  );
 };
